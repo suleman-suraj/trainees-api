@@ -3,7 +3,7 @@ const{ createTrainee, getAllTrainees, getSingleTrainee, updateTrainee, deleteTra
 const protect = require("../middlewares/authMiddleware")
 const router = express.Router()
 
-router.route("/").post(protect,createTrainee).get(protect,getAllTrainees)
+router.route("/").post(createTrainee).get(getAllTrainees)
 router.route("/:_id").get(protect,getSingleTrainee).put(protect,updateTrainee).delete(protect,deleteTrainee)
 
 module.exports = router;
